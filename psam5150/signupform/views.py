@@ -27,6 +27,7 @@ def helloworld(request):
             our_hello_world.message = form.cleaned_data['message']
             our_hello_world.save()
             return redirect('hello')
+            #always redirect so they can't click back
     else:
         form = HelloWorldForm()
     return render_to_response('signup/helloworld.html', {'form': form}, context_instance=RequestContext(request))
